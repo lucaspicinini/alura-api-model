@@ -2,6 +2,9 @@
 // coloque o caminho do arquivo da biblioteca no seu projeto
 import { data, id, courseProgresses, guides } from "./aluraApiModel.js";
 
+// seu script DEVE conter o atributo type="module" no seu index.html
+// Desse jeito -> <script type="module" src="./index.js"></script>
+
 // Essa biblioteca abstrai a requisição à API para você e lhe dá acesso a 4 promises:
 // -> data, id, courseProgresses e guides <-. Abaixo vamos ver todo o conteúdo retornado por elas.
 
@@ -24,7 +27,7 @@ id.then((respostaDaApi) => {
 courseProgresses.then((respostaDaApi) => {
     // Nesta Promise, respostaDaApi é um array, que pode conter um ou mais de um curso.
     // o [0] acessa diretamente o primeiro curso da lista.
-    // as propriedes que você pode usar em cada curso são:
+    // as propriedades que você pode usar em cada curso são:
 
     // finished (retorna true ou false), id (id do curso),
     // lastAccessTime (retorna o último acesso em ms),
@@ -40,7 +43,7 @@ courseProgresses.then((respostaDaApi) => {
 guides.then((respostaDaApi) => {
     // Nesta Promise, respostaDaApi é um array, que pode conter um ou mais de um guia de estudos.
     // o [0] acessa diretamente o primeiro guia da lista.
-    // as propriedes que você pode usar em cada guia são:
+    // as propriedades que você pode usar em cada guia são:
 
     // author (author do guia), id (id do guia),
     // totalCourses (numero com total de cursos),
@@ -61,4 +64,4 @@ guides.then((respostaDaApi) => {
 // ela retorna toda a resposta da api, contendo inclusive as promises
 // id, courseProgresses e guides em sua resposta. Você pode acessá-la
 // caso precise de uma manipulação de dados mais específica, mas no geral
-// no será necessário.
+// não será necessário.
